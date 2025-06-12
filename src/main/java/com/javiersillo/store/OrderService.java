@@ -1,14 +1,15 @@
 package com.javiersillo.store;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+// This service consumes the PaymentService interface to decouple payment provider implementations.
 @Service
 public class OrderService {
     private PaymentService paymentService;
 
-    public OrderService(){}
+    public OrderService() {
+    }
 
     // This tells Spring to prefer this constructor | not necessary when you have only 1 constructor
     @Autowired
